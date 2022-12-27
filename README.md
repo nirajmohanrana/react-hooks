@@ -123,4 +123,14 @@ const [items, setItems] = useState([]);
 
 ### **_Note:_**
 
-    When dealing with objects or arrays, always make sure to 'spread' your state variable and then call the setter function.
+- When dealing with objects or arrays, always make sure to 'spread' your state variable and then call the setter function.
+
+---
+
+---
+
+## **UseEffect Hook:**
+
+<br><br>
+<img src="https://media0.giphy.com/media/13VLdHIQRb8zQc/giphy.gif?cid=790b761139649fcbebc663ec138bf6268a255990c913eb92&rid=giphy.gif&ct=g" alt="1" width="20">
+<br>
