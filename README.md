@@ -141,3 +141,51 @@ Creating component metioned above:
 - componentDidMount
 - componentDidUpdate
 - componentWillUnmount
+
+UseEffect runs after every render of the component.
+
+```
+  useEffect(() => {
+    document.title = `You Clicked ${count} times`;
+  });
+```
+
+- _implemented EffectCounter.js_
+
+---
+
+<br><br>
+<img src="https://media3.giphy.com/media/pKt7w9ILVOdWw/giphy.gif?cid=ecf05e47aswk6vvvvu7kccxkwfqmiw1pgzp20s6iaii56xhf&rid=giphy.gif&ct=g" alt="2" width="20">
+<br>
+**_useEffect()_ conditionally run efffects:**<br>
+Last time we saw that "UseEffect runs after every render of the component."<br>
+To counter this React team implemented **_another parameter_** in useEffect()<br>
+i.e. `an Array []`
+
+```
+useEffect(() => {
+  console.log("useEffect - Updating document title");
+  document.title = `You Clicked ${count} times`;
+}, [count]);
+```
+
+Which checks that parameter if it changes then it runs the render.
+
+- _implemented EffectCounter2.js_
+
+---
+
+<br><br>
+<img src="https://media0.giphy.com/media/d7id4BY2NQnJe/giphy.gif?cid=790b7611b2b74ce0fcd0b69e3535031c98aefae80a8021c0&rid=giphy.gif&ct=g" alt="3" width="20">
+<br>
+**_useEffect()_ Run effects only once:**<br>
+By simple adding an empty Array we can command react to render it once
+
+```
+useEffect(() => {
+  console.log("useEffect called");
+  window.addEventListener("mousemove", logMousePosition);
+}, []);
+```
+
+- _implemented EffectMouse.js_
