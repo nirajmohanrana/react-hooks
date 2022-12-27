@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function HookCounterThree() {
+function StateCounter3() {
   const [name, setName] = useState({ firstName: "", lastName: "" });
 
   return (
@@ -24,4 +24,4 @@ function HookCounterThree() {
   );
 }
 
-export default HookCounterThree;
+export default StateCounter3;
