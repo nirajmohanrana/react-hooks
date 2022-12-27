@@ -26,10 +26,18 @@
 `27/12/22`
 <br><br>
 <img src="https://media0.giphy.com/media/13VLdHIQRb8zQc/giphy.gif?cid=790b761139649fcbebc663ec138bf6268a255990c913eb92&rid=giphy.gif&ct=g" width="20"><br>
-**_useState()_ hooks:**
-
-`const [count, setCount] = useState(0);`
+**_useState()_ hooks:**<br>
+`const [count, setCount] = useState(0);`<br>
 
     Only call HOOKS on the TOP level.
     Don't Call HOOks into condition, or nested functions.
     Only call hooks from React Functions (not from JS components)
+
+- _implemented HookCounter_
+
+<br><br>
+<img src="https://media3.giphy.com/media/pKt7w9ILVOdWw/giphy.gif?cid=ecf05e47aswk6vvvvu7kccxkwfqmiw1pgzp20s6iaii56xhf&rid=giphy.gif&ct=g" width="20"><br>
+**_useState()_ hooks with previous state value:**<br>
+Passing previous state is unsafe when used in a function so instead pass it through function to a State setter
+`Previosly=>
+`
