@@ -16,14 +16,14 @@ function HookCounterTwo() {
       </button>
       <button
         onClick={() => {
-          setCount(count + 1);
+          setCount((prevCount) => prevCount + 1);
         }}
       >
         Increment
       </button>
       <button
         onClick={() => {
-          setCount(count - 1);
+          setCount((prevCount) => prevCount - 1);
         }}
       >
         Decrement
