@@ -189,3 +189,27 @@ useEffect(() => {
 ```
 
 - _implemented EffectMouse.js_
+
+---
+
+<br><br>
+<img src="https://media0.giphy.com/media/U7oYLyQqXM9sA/giphy.gif?cid=790b7611aad068ac5a2ce8c480a00e16daad98909dd1a1df&rid=giphy.gif&ct=g" alt="4" width="20">
+<br>
+**_useEffect()_ with clean up:**<br>
+In the MouseContainer when we toggle off the events then too the Mouse events are logged. To counter this we had to clean up the events that means we have to unsubbscribe all the events,timers and function.<br>
+In **_componentWillUnmount()_** function we set the clean up function which can be performed in useEffect by adding a **_return()_** function to it.
+
+```
+  useEffect(() => {
+    console.log("useEffect called");
+    window.addEventListener("mousemove", logMousePosition);
+
+    return () => {
+      console.log("Component unmounted");
+      window.removeEventListener("mousemove", logMousePosition);
+    };
+  }, []);
+```
+
+- _implemented EffectMouseContainer.js_
+- _implemented EffectMouse.js_
