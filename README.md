@@ -276,3 +276,29 @@ const [count2, setCount2] = useState(0);
   <img src="resources/Multi-useEffect.png" width="450"/>
 
 - _implemented EffectIntervalCounter.js_
+
+---
+
+<br><br>
+<img src="https://media2.giphy.com/media/X1pVOg2DTpU7C/giphy.gif?cid=790b761101d7251a33c23a4bcab08a502c6336b12b9ae0d9&rid=giphy.gif&ct=g" alt="6" width="20"><br>
+**Fecthing data with _useEffect()_:**<br>
+first of all install axios.
+
+### **_Note:_**
+
+- In Future, Suspense will be incharge for data fetching.<br>
+
+But by fetching data with **_useState() & useEffect()_** help understanding it more.<br>
+
+Check this files to understand it thoroughly:
+
+- _implemented EffectDataFetching.js_
+
+1st: Fetch 1:<br>
+Here we fetch all 100 posts
+
+2nd: Fetch 2:<br>
+Placed an input field and **_onChange()_** to it we fetch only one post by given **_id_**
+
+3rd: Fetch 3:<br>
+Same as above instead used Button to fetch it
