@@ -302,3 +302,9 @@ Placed an input field and **_onChange()_** to it we fetch only one post by given
 
 3rd: Fetch 3:<br>
 Same as above instead used Button to fetch it
+
+---
+
+---
+
+## **UseContext Hook:**
