@@ -50,6 +50,7 @@ The useState Hook can be used to keep **_track of_** strings, numbers, booleans,
 <img src="https://media3.giphy.com/media/pKt7w9ILVOdWw/giphy.gif?cid=ecf05e47aswk6vvvvu7kccxkwfqmiw1pgzp20s6iaii56xhf&rid=giphy.gif&ct=g" alt="2" width="20">
 <br>
 **_useState()_ with previous state value:**<br>
+
 Passing previous state is unsafe when used in a function so instead pass it through function to a State setter.<br>
 
 **Previously**:<br>
@@ -213,3 +214,65 @@ In **_componentWillUnmount()_** function we set the clean up function which can 
 
 - _implemented EffectMouseContainer.js_
 - _implemented EffectMouse.js_
+
+---
+
+<br><br>
+<img src="https://media2.giphy.com/media/xRCASav6bgz9m/giphy.gif?cid=790b7611a5c4591b0c5020bb956df2c6a38bfadcb55e3154&rid=giphy.gif&ct=g" alt="5" width="20">
+<br>
+**_useEffect()_ with Incorrect Dependency:**<br>
+When setting up counter we have to render it once so with put an empty string into the useEffect Dependency.
+But useEffect Dependency is created to look out for the changes occured in the dependency in our change **_"count"_**.
+
+```
+const [count, setCount] = useState(0);
+
+  const tick = () => {
+    setCount(count + 1);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(tick, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [count]);
+```
+
+How ever we can use the second method to implement without setting dependency where we use 2nd learnings from [useState](#usestate-hook):
+
+```
+const [count2, setCount2] = useState(0);
+
+  const tick2 = () => {
+    setCount2((prevCount) => prevCount + 1);
+  };
+
+  useEffect(() => {
+    const interval2 = setInterval(tick2, 1000);
+    return () => {
+      clearInterval(interval2);
+    };
+  }, []);
+```
+
+### **_Note:_**
+
+- Whenever we want to call a function in **_useEffect_** it is best to add whole function into the useEffect function.
+
+```
+  useEffect(() => {
+    function doSomething() {
+      console.log(someProp);
+    }
+    const interval2 = setInterval(tick2, 1000);
+    return () => {
+      clearInterval(interval2);
+    };
+  }, [someProp]);
+```
+
+- In class component we put related code into different life-cycle and unrelated code into same life cycle, so we can use multiple useEffect calls into the same component. If you have multiple effects to run, make sure you separate it out rather than having all the code in a single uesEffect.<br>
+  <img src="resources/Multi-useEffect.png" width="450"/>
+
+- _implemented EffectIntervalCounter.js_

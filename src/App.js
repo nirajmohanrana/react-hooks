@@ -1,12 +1,12 @@
 import "./App.css";
 // import EffectCounter2 from "./components/useEffect/EffectCounter2";
 // import EffectMouse from "./components/useEffect/EffectMouse";
-import EffectMouseContainer from "./components/useEffect/EffectMouseContainer";
+import EffectIntervalCounter from "./components/useEffect/EffectIntervalCounter";
 
 function App() {
   return (
     <div className="App">
-      <EffectMouseContainer />
+      <EffectIntervalCounter />
     </div>
   );
 }
